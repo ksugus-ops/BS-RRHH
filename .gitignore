@@ -1,0 +1,63 @@
+# ===== Secretos y entorno (NUNCA subir) =====
+.env
+.env.*
+!.env.example
+**/appsettings.*.local.json
+*.pfx
+*.key
+
+# ===== .NET =====
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+.vs/
+TestResults/
+*.trx
+[Cc]overage*/
+!backend/global.json
+
+# ===== Node / Frontend =====
+node_modules/
+frontend/dist/
+frontend/coverage/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ===== Editores / SO =====
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
+
+# ===== Configuración local del editor / herramientas =====
+.claude/
+.cursor/
+.idea/
+.vscode/settings.json
+
+# ===== SQLite (dev/demo) =====
+*.db
+*.db-shm
+*.db-wal
+
+# ===== Documentos de trabajo internos (no forman parte de la entrega pública) =====
+docs/video-script.md
+docs/delivery-checklist.md
+docs/slides-outline.md
+docs/demo-script.md
+docs/implementation-plan.md
+docs/project-context.md
+
+# ===== Artefactos de publicación (contienen web.config con secretos) =====
+publish/
+**/publish/
+
+# Presentacion (material de entrega, no en el repo publico)
+docs/BINSA RRHH.pdf

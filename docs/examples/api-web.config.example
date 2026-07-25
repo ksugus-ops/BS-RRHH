@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  HRIA — Ejemplo de web.config para la API en IIS.
+
+  CÓMO USARLO
+  1. Publica:  dotnet publish src/HRIA.Api -c Release -o .\publish
+  2. Copia este archivo sobre  publish\web.config  (o edita el generado).
+  3. Sustituye los valores <<< ... >>> por los reales.
+  4. Copia la carpeta al servidor y reinicia el sitio en IIS.
+
+  DIFERENCIA CON EL GENERADO:
+  el web.config que crea "dotnet publish" trae <aspNetCore ... /> auto-cerrado y SIN
+  variables. Aquí se abre la etiqueta para incluir <environmentVariables>.
+
+  ⚠️ Este archivo contendrá SECRETOS una vez relleno: no lo subas al repositorio
+     y restringe su lectura (administradores + IIS APPPOOL\HRIA-Api).
+  ⚠️ "dotnet publish" SOBRESCRIBE el web.config: guarda una copia del tuyo.
+-->
+<configuration>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+
+      <!-- Si el servidor tiene instalada la Publicación WebDAV, su módulo captura
+           PUT y DELETE antes que la aplicación y responde 405. Se desactiva solo
+           para este sitio; la configuración global de IIS no se toca. -->
+      <modules>
+        <remove name="WebDAVModule" />
+      </modules>
+
+      <handlers>
+        <remove name="WebDAV" />
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+
+      <aspNetCore processPath="dotnet"
+                  arguments=".\HRIA.Api.dll"
+                  stdoutLogEnabled="false"
+                  stdoutLogFile=".\logs\stdout"
+                  hostingModel="inprocess">
+        <environmentVariables>
+
+          <!-- Entorno -->
+          <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Production" />
+
+          <!-- Base de datos: autenticación SQL -->
+          <environmentVariable name="Database__Provider" value="SqlServer" />
+          <environmentVariable name="ConnectionStrings__DefaultConnection"
+                               value="Server=&lt;&lt;&lt;SERVIDOR&gt;&gt;&gt;,1433;Database=HRIA;User Id=hria_app;Password=&lt;&lt;&lt;PASSWORD&gt;&gt;&gt;;TrustServerCertificate=True;Encrypt=True" />
+
+          <!-- Alternativa: autenticación integrada de Windows (sin contraseña).
+               Requiere crear el login del app pool en SQL Server.
+          <environmentVariable name="ConnectionStrings__DefaultConnection"
+                               value="Server=&lt;&lt;&lt;SERVIDOR&gt;&gt;&gt;;Database=HRIA;Trusted_Connection=True;TrustServerCertificate=True" />
+          -->
+
+          <!-- Seguridad: OBLIGATORIO en producción (>=32 bytes aleatorios) -->
+          <environmentVariable name="Jwt__Secret" value="&lt;&lt;&lt;SECRETO_LARGO_ALEATORIO&gt;&gt;&gt;" />
+          <environmentVariable name="Jwt__Issuer" value="HRIA" />
+          <environmentVariable name="Jwt__Audience" value="HRIA.Client" />
+          <environmentVariable name="Jwt__ExpiresMinutes" value="60" />
+
+          <!-- CORS: origen EXACTO del frontend, sin barra final -->
+          <environmentVariable name="Cors__AllowedOrigins__0" value="https://&lt;&lt;&lt;FRONTEND&gt;&gt;&gt;" />
+
+          <!-- Datos demo: false si ya ejecutaste db/03-seed-demo.sql -->
+          <environmentVariable name="Demo__Enabled" value="false" />
+
+          <!-- Asistente IA. Proveedor: "Claude", "OpenAI" o "Demo".
+               Clave vacía = modo demo, aunque el proveedor esté seleccionado.
+               OpenAI__BaseUrl apunta a cualquier servicio compatible (Groq, OpenRouter, Ollama).
+               ⚠️ Capa gratuita SOLO con datos ficticios; con datos reales, pago o local (ADR-006). -->
+          <environmentVariable name="Ai__Provider" value="OpenAI" />
+          <environmentVariable name="OpenAI__BaseUrl" value="https://api.groq.com/openai/v1" />
+          <environmentVariable name="OpenAI__Model" value="llama-3.3-70b-versatile" />
+          <environmentVariable name="OpenAI__ApiKey" value="" />
+
+        </environmentVariables>
+      </aspNetCore>
+
+    </system.webServer>
+  </location>
+</configuration>

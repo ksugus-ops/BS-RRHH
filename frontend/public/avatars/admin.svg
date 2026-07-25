@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Avatar de la administradora">
+  <defs>
+    <clipPath id="c"><circle cx="64" cy="64" r="64"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d9973"/>
+      <stop offset="1" stop-color="#33cc9a"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="128" height="128" fill="url(#bg)"/>
+    <!-- hombros -->
+    <path d="M18 128c0-25 21-38 46-38s46 13 46 38z" fill="#1e293b"/>
+    <path d="M52 92h24v14a12 12 0 0 1-24 0z" fill="#f2c6a0"/>
+    <!-- cuello y cabeza -->
+    <circle cx="64" cy="62" r="26" fill="#f7d3b0"/>
+    <!-- pelo -->
+    <path d="M38 60a26 26 0 0 1 52 0v-4a26 26 0 0 0-52 0z" fill="#3b2a22"/>
+    <path d="M36 58c0-18 12-30 28-30s28 12 28 30c0 4-2 6-4 6 0-14-9-22-24-22s-24 8-24 22c-2 0-4-2-4-6z" fill="#4a3428"/>
+    <path d="M34 62c-2 12 2 24 6 28-6-2-10-14-10-24 0-2 2-4 4-4z" fill="#4a3428"/>
+    <path d="M94 62c2 12-2 24-6 28 6-2 10-14 10-24 0-2-2-4-4-4z" fill="#4a3428"/>
+    <!-- ojos y sonrisa -->
+    <circle cx="55" cy="62" r="2.6" fill="#2f2320"/>
+    <circle cx="73" cy="62" r="2.6" fill="#2f2320"/>
+    <path d="M56 72c4 4 12 4 16 0" stroke="#2f2320" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

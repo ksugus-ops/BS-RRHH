@@ -1,0 +1,137 @@
+:root {
+  --sans: 'Segoe UI', system-ui, Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* ---------- Tema claro (por defecto de las variables) ----------
+     El acento verde-menta es común a ambos modos; lo que cambia son
+     las superficies, los bordes y los niveles de texto. */
+  --hria-bg: #f1f5f4;
+  --hria-surface: #ffffff;        /* tarjetas y paneles */
+  --hria-surface-2: #fbfdfc;      /* zonas sutilmente diferenciadas */
+  --hria-surface-3: #f1f5f4;      /* burbujas, chips */
+  --hria-border: #eef2f6;
+  --hria-border-strong: #e2e8f0;
+  --hria-divider: #f1f5f9;
+
+  --hria-text: #334155;
+  --hria-heading: #0f172a;
+  --hria-strong: #1e293b;
+  --hria-muted: #64748b;
+  --hria-muted-2: #94a3b8;
+
+  --hria-accent: #16b98a;
+  --hria-accent-600: #0d9973;     /* verde legible sobre fondo claro */
+  --hria-accent-700: #0b7d5f;     /* verde aún más oscuro */
+  --hria-accent-soft: rgba(22, 185, 138, 0.08);
+  --hria-accent-soft-2: rgba(22, 185, 138, 0.14);
+
+  --hria-topbar-bg: rgba(255, 255, 255, 0.85);
+  --hria-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.06);
+  --hria-clock-stroke: #3b434b;
+  --hria-code-bg: rgba(22, 185, 138, 0.1);
+  --hria-code-color: #0b7d5f;
+
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Tema oscuro ----------
+   Se activa con la clase .hria-dark en <html>, que es también el
+   selector que usa PrimeVue (ver main.ts). */
+:root.hria-dark {
+  --hria-bg: #0d1412;
+  --hria-surface: #15201c;
+  --hria-surface-2: #111a17;
+  --hria-surface-3: #1b2723;
+  --hria-border: #223029;
+  --hria-border-strong: #2a3a33;
+  --hria-divider: #1f2b26;
+
+  --hria-text: #cbd5e1;
+  --hria-heading: #f1f5f9;
+  --hria-strong: #e2e8f0;
+  --hria-muted: #93a59e;
+  --hria-muted-2: #7d8f88;
+
+  /* Sobre fondo oscuro hay que ACLARAR el acento, no oscurecerlo:
+     #0b7d5f sobre #15201c no llega al contraste mínimo. */
+  --hria-accent-600: #33cc9a;
+  --hria-accent-700: #5fdcb2;
+  --hria-accent-soft: rgba(22, 185, 138, 0.14);
+  --hria-accent-soft-2: rgba(22, 185, 138, 0.22);
+
+  --hria-topbar-bg: rgba(21, 32, 28, 0.85);
+  --hria-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 16px rgba(0, 0, 0, 0.45);
+  --hria-clock-stroke: #8fa39b;
+  --hria-code-bg: rgba(22, 185, 138, 0.18);
+  --hria-code-color: #5fdcb2;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  background:
+    radial-gradient(1100px 500px at 100% -5%, rgba(22, 185, 138, 0.10), transparent 55%),
+    var(--hria-bg);
+  background-attachment: fixed;
+  color: var(--hria-text);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--hria-heading);
+}
+
+a {
+  color: var(--hria-accent);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--hria-code-bg);
+  color: var(--hria-code-color);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* Tarjetas PrimeVue con sombra suave y esquinas redondeadas (aspecto amable). */
+.p-card {
+  border-radius: 16px !important;
+  box-shadow: var(--hria-card-shadow) !important;
+  border: 1px solid var(--hria-border) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 185, 138, 0.3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

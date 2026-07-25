@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3A8264A-7F65-4956-BE2E-D234C476F760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRIA.Domain", "src\HRIA.Domain\HRIA.Domain.csproj", "{9BEA774C-68EC-442F-A314-95D9B8A0DBA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRIA.Application", "src\HRIA.Application\HRIA.Application.csproj", "{D3BAC36D-EE8B-4DB0-8ED7-AD3D9BDD5539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRIA.Infrastructure", "src\HRIA.Infrastructure\HRIA.Infrastructure.csproj", "{FC0853C1-C715-4936-8964-20B5134F4BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRIA.Api", "src\HRIA.Api\HRIA.Api.csproj", "{CC6FB65D-CDE2-4B7C-9CDA-1B967FE13FC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{273FE604-9537-47D7-BB7F-52981782778E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRIA.Tests", "tests\HRIA.Tests\HRIA.Tests.csproj", "{425E5C41-D95D-4970-A3CF-DDE5CDEFD5E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BEA774C-68EC-442F-A314-95D9B8A0DBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BEA774C-68EC-442F-A314-95D9B8A0DBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BEA774C-68EC-442F-A314-95D9B8A0DBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BEA774C-68EC-442F-A314-95D9B8A0DBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3BAC36D-EE8B-4DB0-8ED7-AD3D9BDD5539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BAC36D-EE8B-4DB0-8ED7-AD3D9BDD5539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BAC36D-EE8B-4DB0-8ED7-AD3D9BDD5539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BAC36D-EE8B-4DB0-8ED7-AD3D9BDD5539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC0853C1-C715-4936-8964-20B5134F4BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0853C1-C715-4936-8964-20B5134F4BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0853C1-C715-4936-8964-20B5134F4BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0853C1-C715-4936-8964-20B5134F4BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC6FB65D-CDE2-4B7C-9CDA-1B967FE13FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC6FB65D-CDE2-4B7C-9CDA-1B967FE13FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC6FB65D-CDE2-4B7C-9CDA-1B967FE13FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC6FB65D-CDE2-4B7C-9CDA-1B967FE13FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{425E5C41-D95D-4970-A3CF-DDE5CDEFD5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{425E5C41-D95D-4970-A3CF-DDE5CDEFD5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{425E5C41-D95D-4970-A3CF-DDE5CDEFD5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{425E5C41-D95D-4970-A3CF-DDE5CDEFD5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BEA774C-68EC-442F-A314-95D9B8A0DBA3} = {D3A8264A-7F65-4956-BE2E-D234C476F760}
+		{D3BAC36D-EE8B-4DB0-8ED7-AD3D9BDD5539} = {D3A8264A-7F65-4956-BE2E-D234C476F760}
+		{FC0853C1-C715-4936-8964-20B5134F4BB8} = {D3A8264A-7F65-4956-BE2E-D234C476F760}
+		{CC6FB65D-CDE2-4B7C-9CDA-1B967FE13FC9} = {D3A8264A-7F65-4956-BE2E-D234C476F760}
+		{425E5C41-D95D-4970-A3CF-DDE5CDEFD5E6} = {273FE604-9537-47D7-BB7F-52981782778E}
+	EndGlobalSection
+EndGlobal
